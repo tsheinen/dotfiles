@@ -1,0 +1,5 @@
+[user]
+	name = Teddy Heinen
+	email = teddy@heinen.dev
+[core]
+	autocrlf = input
