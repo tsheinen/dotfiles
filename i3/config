@@ -55,8 +55,6 @@ bindsym $mod+F2 exec firefox
 bindsym $mod+F3 exec nautilus
 bindsym $mod+Shift+F3 exec gksu nautilus
 bindsym $mod+F5 exec terminal -e 'mocp'
-bindsym $mod+t exec --no-startup-id pkill compton
-bindsym $mod+Ctrl+t exec --no-startup-id compton -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym Print exec --no-startup-id flameshot gui
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
@@ -241,7 +239,7 @@ mode "resize" {
 
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id nitrogen --restore; sleep 1; picom -b
+exec --no-startup-id picom -b
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 
@@ -249,26 +247,12 @@ exec --no-startup-id start_conky_maia
 exec --no-startup-id xautolock -time 10 -locker blurlock
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
-#exec --no-startup-id ulauncher &
 exec --no-startup-id launcher &
-exec --no-startup-id dropbox start
 exec_always --no-startup-id nitrogen /home/sky/.backgrounds --random --set-scaled
 exec_always --no-startup-id bash ~/.config/polybar/start.sh
 exec --no-startup-id discord --start-minimized
 exec --no-startup-id dropbox
 
-# Color palette used for the terminal ( ~/.Xresources file )
-# Colors are gathered based on the documentation:
-# https://i3wm.org/docs/userguide.html#xresources
-# Change the variable name at the place you want to match the color
-# of your terminal like this:
-# [example]
-# If you want your bar to have the same background color as your 
-# terminal background change the line 362 from:
-# background #14191D
-# to:
-# background $term_background
-# Same logic applied to everything else.
 set_from_resource $term_background background
 set_from_resource $term_foreground foreground
 set_from_resource $term_color0     color0
@@ -293,13 +277,13 @@ set_from_resource $term_color15    color15
 
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
-  client.focused          #556064 #556064 #80FFF9 #FDF6E3
-  client.focused_inactive #2F3D44 #2F3D44 #1ABC9C #454948
-  client.unfocused        #2F3D44 #2F3D44 #1ABC9C #454948
-  client.urgent           #CB4B16 #FDF6E3 #1ABC9C #268BD2
-  client.placeholder      #000000 #0c0c0c #ffffff #000000 
+  client.focused          #00000000 $term_background $term_foreground $term_foreground
+  client.focused_inactive #00000000 $term_background $term_foreground $term_color8
+  client.unfocused        #00000000 $term_background $term_foreground $term_color8
+  client.urgent           #00000000 $term_background $term_foreground $term_color8
+  client.placeholder      #00000000 $term_background $term_foreground $term_color8
 
-  client.background       #2B2C2B
+  client.background       $term_background
 
 #############################
 ### settings for i3-gaps: ###
