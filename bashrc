@@ -42,7 +42,8 @@ alias vp='vim PKGBUILD'
 alias more=less
 alias cat='bat'
 alias icat='kitty +kitten icat'
-
+alias sums='paste -s -d+ - | bc'
+alias top='zenith'
 xhost +local:root > /dev/null 2>&1
 
 
