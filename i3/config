@@ -33,13 +33,13 @@ bindsym $mod+Return exec terminal
 bindsym $mod+Shift+q kill
 
 # start program launcher
-bindsym $mod+d exec --no-startup-id dmenu_recency
+bindsym $mod+d exec --no-startup-id dmenu_run
 
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
 
-bindsym $mod+Tab exec "rofi -show window"
-bindsym Mod1+Tab exec "rofi -show window"
+#bindsym $mod+Tab exec "rofi -show window"
+#bindsym Mod1+Tab exec "rofi -show window"
 
 
 bindsym $mod+Ctrl+m exec pavucontrol
@@ -182,6 +182,8 @@ for_window [class="Spotify"] move to workspace $WS8
 for_window [class="GParted"] floating enable border normal
 for_window [class="Nitrogen"] floating enable sticky enable border normal
 for_window [class="Pavucontrol"] floating enable
+for_window [title="Microsoft Teams Notification" class="microsoft teams - preview"] floating enable
+for_window [title="Microsoft Teams Notification" class="Microsoft Teams - Preview"] floating enable
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -242,12 +244,13 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id picom -b
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
+exec --no-startup-id clipit
 
 exec --no-startup-id start_conky_maia
 exec --no-startup-id xautolock -time 10 -locker blurlock
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
-exec --no-startup-id launcher &
+exec_always --no-startup-id sky-menu &
 exec_always --no-startup-id nitrogen /home/sky/.backgrounds --random --set-scaled
 exec_always --no-startup-id bash ~/.config/polybar/start.sh
 exec --no-startup-id discord --start-minimized

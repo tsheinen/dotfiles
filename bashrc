@@ -32,7 +32,6 @@ colors() {
 }
 
 
-alias ls='ls --color=auto'
 alias grep='grep --colour=auto'
 alias egrep='egrep --colour=auto'
 alias cp="cp -i"                          # confirm before overwriting something
@@ -41,9 +40,11 @@ alias free='free -m'                      # show sizes in MB
 alias vp='vim PKGBUILD'
 alias more=less
 alias cat='bat'
+alias ucat='/usr/bin/cat'
 alias icat='kitty +kitten icat'
 alias sums='paste -s -d+ - | bc'
 alias top='zenith'
+alias ls="exa"
 xhost +local:root > /dev/null 2>&1
 
 
@@ -88,6 +89,14 @@ up ()
 }
 
 
+venv(){
+	local SEL=$(ls ~/venvs | fzf)
+	source ~/venvs/$SEL/bin/activate;
+
+}
+
+
+
 if ! pgrep -u "$USER" ssh-agent > /dev/null; then
     ssh-agent > "$XDG_RUNTIME_DIR/ssh-agent.env"
 fi
@@ -96,3 +105,5 @@ if [[ ! "$SSH_AUTH_SOCK" ]]; then
 fi
 
 export LIBVIRT_DEFAULT_URI="qemu:///system"
+
+. /home/sky/.local/bin/virtualenvwrapper.sh

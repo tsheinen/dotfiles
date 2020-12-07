@@ -3,3 +3,5 @@
 	email = teddy@heinen.dev
 [core]
 	autocrlf = input
+[pull]
+	ff = only
