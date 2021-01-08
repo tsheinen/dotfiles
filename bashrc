@@ -45,6 +45,7 @@ alias icat='kitty +kitten icat'
 alias sums='paste -s -d+ - | bc'
 alias top='zenith'
 alias ls="exa"
+alias vim="nvim"
 xhost +local:root > /dev/null 2>&1
 
 
@@ -106,4 +107,4 @@ fi
 
 export LIBVIRT_DEFAULT_URI="qemu:///system"
 
-. /home/sky/.local/bin/virtualenvwrapper.sh
+#. /home/sky/.local/bin/virtualenvwrapper.sh
