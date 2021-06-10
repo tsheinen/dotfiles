@@ -46,6 +46,9 @@ alias sums='paste -s -d+ - | bc'
 alias top='zenith'
 alias ls="exa"
 alias vim="nvim"
+alias pwninit='pwninit --template-path ~/.config/pwninit-template.py --template-bin-name exe'
+alias cb=clipboard
+
 xhost +local:root > /dev/null 2>&1
 
 
