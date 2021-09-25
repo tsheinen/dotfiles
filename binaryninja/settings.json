@@ -1,0 +1,8 @@
+{
+	"ghinja.ghidra_install_path" : "/opt/ghidra/support/analyzeHeadless",
+	"rendering.hlil.scopingStyle" : "braces",
+	"ui.font.app.name" : "Iosevka Extended",
+	"ui.font.view.name" : "FiraCode Nerd Font Mono",
+	"ui.font.view.style" : "Regular",
+	"ui.theme" : "Lovelace"
+}
