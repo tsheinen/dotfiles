@@ -37,7 +37,7 @@ bindsym $mod+d exec --no-startup-id dmenu_run
 
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
-
+bindsym Ctrl+space exec --no-startup-id /home/sky/.config/rofi/scripts/rofi-apps
 #bindsym $mod+Tab exec "rofi -show window"
 #bindsym Mod1+Tab exec "rofi -show window"
 
@@ -254,7 +254,7 @@ exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id sky-menu &
 exec_always --no-startup-id nitrogen /home/sky/.backgrounds --random --set-scaled
 exec_always --no-startup-id bash ~/.config/polybar/start.sh
-exec --no-startup-id discord --start-minimized
+exec --no-startup-id discord-canary --start-minimized
 exec --no-startup-id dropbox
 
 set_from_resource $term_background background
