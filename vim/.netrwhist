@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/tmp/flag.enc'
+let g:netrw_dirhist_4='/home/sky/.config'
+let g:netrw_dirhist_3='/home/sky/.config/radare2/radare2rc'
+let g:netrw_dirhist_2='/home/sky/.config'
+let g:netrw_dirhist_1='/home/sky/git/tamuctf-probs-2020/Pwn/calculataser/client'

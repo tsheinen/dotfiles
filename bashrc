@@ -48,7 +48,7 @@ alias ls="exa"
 alias vim="nvim"
 alias pwninit='pwninit --template-path ~/.config/pwninit-template.py --template-bin-name exe'
 alias cb=clipboard
-
+alias kdiff='kitty +kitten diff'
 
 alias connect_br20.04='ssh -L 127.0.0.1:63222:127.0.0.1:63222 -fNqC teddy@hulkcybr1.dlh.tamu.edu'
 alias connect_br16.04='ssh -L 127.0.0.1:61222:127.0.0.1:61222 -fNqC teddy@hulkcybr1.dlh.tamu.edu'
