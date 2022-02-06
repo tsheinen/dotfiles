@@ -112,3 +112,5 @@ bindkey '^R' fzf-history-widget
 
 fi
 
+eval "$(zoxide init zsh)"
+source $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
