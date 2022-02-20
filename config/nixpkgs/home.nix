@@ -4,6 +4,8 @@ let
     inherit pkgs;
   };
   in with packageGroups;
+
+
 {
   nixpkgs.config.allowUnfree = true;
   home.username = "sky";
@@ -11,7 +13,7 @@ let
 
   home.stateVersion = "22.05";
   home.packages = with packageGroups; [
-  ] ++ security ++ utils;
+  ] ++ security ++ utils ++ dev ++ apps;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
