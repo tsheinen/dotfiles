@@ -13,10 +13,16 @@ let
 
   home.stateVersion = "22.05";
   home.packages = with packageGroups; [
-  ] ++ security ++ utils ++ dev ++ apps;
+  ] ++ security ++ dev ++ apps ++ system;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
   
   targets.genericLinux.enable = true;
+
+
+  # fonts :)
+
+  fonts.fontconfig.enable = true;
+
 }

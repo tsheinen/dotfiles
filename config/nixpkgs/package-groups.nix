@@ -1,10 +1,9 @@
 {pkgs, ...}: with pkgs;
 
-let
-  discord-patched = import ./discord-patched.nix {inherit pkgs;};
-  in with discord-patched;
 
 rec {
+
+	imxx = callPackage "/home/sky/.dotfiles/config/nixpkgs/imhex.nix" { };
 
 	nixpkgs.config.allowUnfree = true;
 
@@ -15,9 +14,19 @@ rec {
 	reverse-engineering = [
 		ghidra
 		rizin
+		jd-gui
+		imxx
+	];
+	
+	exploit-dev = [
+		one_gadget
 	];
 
-	vr = reverse-engineering;
+	forensics = [
+		volatility3
+		binwalk
+		gocr
+	];
 
 
 	cli-utils = [
@@ -35,22 +44,30 @@ rec {
 		jq
 		procs
 		zoxide
+		fzf
+		unzip
+		asciinema
 	];
+
 	gui-utils = [
 		sublime3
 	];
 
 	build = [
 		cmake
+		wabt
 	];
 
-	chat = [
+	system = [
+		(nerdfonts.override { fonts = [ "FiraCode" ]; })
 	];
 
+
+	vr = reverse-engineering ++ exploit-dev;
 	utils = cli-utils ++ gui-utils;
-	security = pentesting ++ vr;
+	security = pentesting ++ vr ++ forensics;
 	dev = build;
 
-	apps = chat;
+	apps = utils;
 
 }

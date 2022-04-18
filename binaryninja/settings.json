@@ -1,5 +1,7 @@
 {
 	"ghinja.ghidra_install_path" : "/opt/ghidra/support/analyzeHeadless",
+	"python.interpreter" : "/usr/lib/libpython3.8.so.1.0",
+	"python.virtualenv" : "/home/sky/venvs/binaryninja/lib/python3.8/site-packages",
 	"rendering.hlil.scopingStyle" : "braces",
 	"ui.font.app.name" : "Iosevka Extended",
 	"ui.font.view.name" : "FiraCode Nerd Font Mono",

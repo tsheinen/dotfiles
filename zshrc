@@ -112,5 +112,14 @@ bindkey '^R' fzf-history-widget
 
 fi
 
-eval "$(zoxide init zsh)"
+
 source $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
+eval "$(zoxide init zsh)"
+
+if test -n "/usr/lib/kitty"; then
+    export KITTY_SHELL_INTEGRATION="enabled"
+    autoload -Uz -- /usr/lib/kitty/shell-integration/zsh/kitty-integration
+    kitty-integration
+    unfunction kitty-integration
+fi
+

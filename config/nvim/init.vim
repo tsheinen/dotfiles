@@ -38,10 +38,20 @@ endif
 	
 call plug#begin()
 
-Plug 'Mofiqul/dracula.nvim'
 Plug 'drewtempelmeyer/palenight.vim'
+Plug 'nvim-lualine/lualine.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'scrooloose/nerdtree'
 call plug#end()
-
 
 set background=dark
 colorscheme palenight
+
+
+lua << END
+require('lualine').setup {
+  options = {
+    theme = 'ayu_mirage',
+  },
+}
+END
